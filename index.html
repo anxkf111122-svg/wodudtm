@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta property="og:title" content="캐치잇 바로가기">
+<meta property="og:description" content="캐치잇 1분 무료가입">
+<meta property="og:image" content="https://anxkf111122-svg.github.io/catchitk/images/thumbnail.png">
+<meta property="og:url" content="https://anxkf111122-svg.github.io/catchitk/">
+<meta property="og:type" content="website">
+
+<title>캐치잇 바로가기</title>
+
+<style>
+body{
+margin:0;
+font-family:sans-serif;
+background:#f8f9fa;
+color:#333;
+text-align:center;
+}
+
+.wrap{
+max-width:420px;
+margin:0 auto;
+padding:48px 20px;
+}
+
+h2{
+font-size:22px;
+margin:0 0 14px;
+}
+
+p{
+font-size:15px;
+color:#555;
+line-height:1.6;
+margin:0 0 20px;
+}
+
+.btn{
+display:none;
+margin:14px auto 0;
+padding:14px 20px;
+width:100%;
+max-width:320px;
+box-sizing:border-box;
+border-radius:10px;
+background:#007BFF;
+color:#fff;
+text-decoration:none;
+font-size:16px;
+font-weight:600;
+}
+
+.sub{
+margin-top:18px;
+font-size:13px;
+color:#777;
+}
+</style>
+</head>
+
+<body>
+
+<div class="wrap">
+
+<h2>외부 브라우저로 연결 중입니다</h2>
+
+<p>
+자동으로 연결되지 않으면 아래 버튼을 눌러주세요.
+</p>
+
+<a id="btn-chrome" class="btn"
+href="intent://catch-it15322.com/join#Intent;scheme=https;package=com.android.chrome;end;">
+크롬으로 열기
+</a>
+
+<a id="btn-ios" class="btn"
+href="x-safari-https://catch-it98711.com/join">
+사파리로 열기
+</a>
+
+<div class="sub">
+잠시 후 자동 이동이 안 되면 표시되는 버튼을 눌러주세요.
+</div>
+
+</div>
+
+<script>
+
+(function(){
+
+const TARGET_URL="https://catch-it98711.com/join";
+const CHROME_INTENT="intent://catch-it15322.com/join#Intent;scheme=https;package=com.android.chrome;end;";
+const IOS_SAFARI_URL="x-safari-https://catch-it98711.com/join";
+
+const ua=navigator.userAgent.toLowerCase();
+
+const isAndroid=ua.includes("android");
+const isIOS=/iphone|ipad|ipod/.test(ua);
+
+const isKakao=ua.includes("kakaotalk");
+const isLine=ua.includes("line");
+const isInstagram=ua.includes("instagram");
+const isFacebook=ua.includes("fban")||ua.includes("fbav");
+const isNaver=ua.includes("naver");
+const isDaum=ua.includes("daum");
+
+const isInApp=isKakao||isLine||isInstagram||isFacebook||isNaver||isDaum;
+
+function show(id){
+const el=document.getElementById(id);
+if(el) el.style.display="block";
+}
+
+function go(url){
+window.location.href=url;
+}
+
+if(!isInApp){
+go(TARGET_URL);
+return;
+}
+
+if(isAndroid){
+
+setTimeout(function(){
+go(CHROME_INTENT);
+},200);
+
+setTimeout(function(){
+show("btn-chrome");
+},1800);
+
+return;
+}
+
+if(isIOS){
+
+setTimeout(function(){
+go(IOS_SAFARI_URL);
+},200);
+
+setTimeout(function(){
+show("btn-ios");
+},1800);
+
+return;
+}
+
+})();
+
+</script>
+
+</body>
+</html>
